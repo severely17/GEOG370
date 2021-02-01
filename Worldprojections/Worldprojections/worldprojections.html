@@ -9,17 +9,52 @@
     <h1>In this project I learned how to display images in different projections</h1>
     
     <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
-    <p>You can write a paragraph here</p>
+    <p>To display the different projections in QGIS, I first used the base map from Natural Earth.  Then through properties I could change the projection of the map to any type of projection.  However, when changing projections, the Indicatrix Mapper would not work except for on the default projection.</p>
     
     <h2>WGS84 Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection appears to favor keeping the gerenal shape consistent rather than the sizes and distances consistent.</h3>
     <a href=".//maps/4326.png">
     <img src=".//maps/4326.png" alt="WGS84" width='500px'>
     </a>
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is focused around the equator and prime meridian, with areas becoming more distorted the further from the center they are.  The shapes remain reletively constant, but the sizes largely distorted.</h3>
     <a href=".//maps/54043.png">
     <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>Pseudo-Mercator Projection</h2>
+    <h3>This projection keeps the shape consistent and accurate, but the sizes are very distorted, especially the further away from the equator.</h3>
+    <a href="./maps/Pseudo-Mercator.png">
+    <img src="./maps/Pseudo-Mercator.png" alt="Pseudo-Mercator" width='500px'>
+    </a>
+    <h2>Sphere Winkel Projection</h2>
+    <h3>This projection maintains accurate sizing while only slightly sacrificing the accuracy of the shapes.  This is due to the projection being slightly curved instead of being rectangular.</h3>
+    <a href="./maps/Sphere Winkel.png">
+    <img src="./maps/Sphere Winkel.png" alt="Sphere Winkel" width='500px'>
+    </a>
+    <h2>Cylindrical Equal Area Projection</h2>
+    <h3>This projection focuses near exclusively on maintaining accurate sizing, but it does so by stretching out the poles.</h3>
+    <a href="./maps/Cylindrical Equal Area.png">
+    <img src="./maps/Cylindrical Equal Area.png" alt="Cylindrical Equal Area" width='500px'>
+    </a>
+    <h2>Equidistant Conic Projection</h2>
+    <h3>This projection displays each of the meridians converging to the center, with the land being layed over it.  It maintains accurate sizing, but distances and locations are very distorted.</h3>
+    <a href="./maps/Equidistant Conic.png">
+    <img src="./maps/Equidistant Conic.png" alt="Equidistant Conic" width='500px'>
+    </a>
+    <h2>Azimuthal Equidistant Projection</h2>
+    <h3>This projection is very similar to the Equidistant Conic Projection, but the point of convergence for the meridians is slightly different.</h3>
+    <a href="./maps/Azimuthal Equidistant.png">
+    <img src="./maps/Azimuthal Equidistant.png" alt="Azimuthal Equidistant" width='500px'>
+    </a>
+    <h2>Mercator Projection</h2>
+    <h3>This projection heavily distorts sizes to try and maintain accuracy to positioning.  This leads to areas around the equator being significantly smaller than they actually are.</h3>
+    <a href="./maps/Mercator 900913.png">
+    <img src="./maps/Mercator 900913.png" alt="Mercator" width='500px'>
+    </a>
+    <h2>Robinson Projection</h2>
+    <h3>This projection maintains accurate sizing and distances by being curved instead of rectangular.  There is still some distortion away from the prime meridian, but it is significantly less than in other projection.</h3>
+    <a href="./maps/Robinson 54030.png">
+    <img src="./maps/Robinson 54030.png" alt="Robinson" width='500px'>
     </a>
     <h2 style="color:red">Now, you should <u>add the following projections on your own:</u></h2>
     <h3>EPSG: 3857, 53018, 54034, 54027, 102016, and two additional projections that you choose.</h3>
