@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+
+<script src = "./data/old_well_4326.geojson"></script>
+
+</head>
+<body>
+    
+    <div id="mapid"></div>
+    <style>
+         #mapid{width: 900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.9125, -79.05], 16.51);
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {}).addTo(map)
+       
+       
+       var IconI = L.icon({
+           iconUrl: 'https://p7.hiclipart.com/preview/571/872/972/drawing-book-book.jpg',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+
+       var PopupI = "Davis Library<br/><img src='https://library.unc.edu/wp-content/uploads/2019/08/davis.jpg'width='100px'/>";
+       
+       L.marker([35.9110, -79.0481],{icon:IconI}).addTo(map)
+            .bindPopup(PopupI)
+            .openPopup();
+
+       var IconII = L.icon({
+           iconUrl: 'https://p7.hiclipart.com/preview/46/783/591/observatory-computer-icons-astronomy-clip-art-others-thumbnail.jpg',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+       
+       var PopupII = "Morehead Planetarium<br/><img src='https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Morehead-Planetarium-Sceince-Center-5ea50ca75056b3a_5ea50d90-5056-b3a8-496aef3392379209.jpg'width='100px'/>";
+
+        L.marker([35.9139, -79.0505],{icon:IconII}).addTo(map)
+            .bindPopup(PopupII)
+            .openPopup();
+
+        var IconIII = L.icon({
+           iconUrl: 'https://p7.hiclipart.com/preview/773/983/702/computer-icons-nature-natural-resource-sustainability-natural-environment-thumbnail.jpg',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+      
+       var PopupIII = "Coker Arboretum<br/><img src='https://ncbg.unc.edu/wp-content/uploads/sites/963/2020/03/Coker-spring-bench.jpg'width='100px'/>";
+      
+       L.marker([35.9131, -79.04849],{icon:IconIII}).addTo(map)
+            .bindPopup(PopupIII)
+            .openPopup();
+
+
+       
+    </script>
+
+
+</body>
+</html>
