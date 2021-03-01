@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([35.74598659126769, -78.85397445603607], 13.0);
+
+      var IconI = L.icon({
+           iconUrl: 'https://png.pngtree.com/element_our/20190601/ourmid/pngtree-cartoon-river-image_1362426.jpg',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+
+       var PopupI = "The area south of US Highway 64 by Beaver Creek used to be entirely undeveloped, but now has multiple shopping areas both to the east and west of the Creek.  Both Beaver Creek Crossings and Beaver Creek Commons get their name from the creek.<br/><img src='https://www.beavercreekcrossings.com/fb-og.png'width='100px'/>";
+       
+       var MarkerI = L.marker([35.7451, -78.8825],{icon:IconI})
+            .bindPopup(PopupI)
+            .openPopup();
+
+
+      var IconII = L.icon({
+           iconUrl: 'https://lh3.googleusercontent.com/proxy/arlLr7GuXUv9lXiX6wXcLdgKeYp3uMWgojJBkLlj4-sJTGOkd96Wwlf3nxQrlMqctORbeQnyBeJTP-zVAhE4jPm73Ly0TB8mQG4216jYSL6drHUBoeLpW9jHnViJKnrDRDVKzWevpeC_sijNYsFus7oORao',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+
+       var PopupII = "The Aberdeen Subdivision railroad line was the basis for much of the early development in Apex.  Initially it was the Raleigh and Augusta Air Line Railroad, before merging into the Seaboard Air Line Railroad in 1901.  In 1967, three years after the aerial photograph was taken, it became the Seaboard Coast Line Railroad, then the Aberdeen Subdivision Railroad in 1986.  The area around the railroad line has continued to be developed with more housing and shops being built around it.<br/><img src='https://sandhillssentinel.com/wp-content/uploads/2019/02/Aberdeen-logo-SHS.jpg'width='100px'/>";
+       
+       var MarkerII = L.marker([35.731944, -78.850278],{icon:IconII})
+            .bindPopup(PopupII)
+            .openPopup();
+
+
+      var IconIII = L.icon({
+           iconUrl: 'https://www.vhv.rs/dpng/d/236-2365961_transparent-road-clipart-png-road-icon-free-png.png',
+           iconSize: [50,50],
+           popupAnchor: [0,0]
+       });
+
+       var PopupIII = "US Routes 1 and 64 are two major highway systems that pass through the Apex area.  Route 1 covers the entire east coast, reaching from Key West, Florida to Fort Kent, Maine, and it is the longest north-south road in the United States.  Route 64 runs east-west from Nags Head, North Carolina to the Four Corners in the northeast of Arizona.  In 1964, the most developed areas were very close to the highways, and that increase in development can be seen in more modern maps.<br/><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/US_64_Exit_419_Diagrammatic_Guide_Sign.jpg/220px-US_64_Exit_419_Diagrammatic_Guide_Sign.jpg'width='100px'/>";
+       
+       var MarkerIII = L.marker([35.73724, -78.79277],{icon:IconIII})
+            .bindPopup(PopupIII)
+            .openPopup();     
+
+
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      	maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+         }).addTo(map);
+      
+      var HistApex = L.tileLayer('./Tiles 2/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      })
+
+      var TheTiles = {
+        "Open Street Map": OSM,
+        "Historical Apex": HistApex
+      }
+
+      var TheVectors = {
+        "Beaver Creek":MarkerI,
+        "Aberdeen Subdivision":MarkerII,
+        "US 64 and US 1":MarkerIII
+        
+      }
+
+      L.control.layers(TheTiles, TheVectors).addTo(map);
+
+
+
+  </script>
+</body>
+</html>
