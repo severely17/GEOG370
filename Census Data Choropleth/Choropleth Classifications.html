@@ -11,9 +11,9 @@
 <h3>For each of the maps, the ratio used was the Population in Poverty divided by the Total Population, then multiplied by 10,000 to get the Number of People in Poverty per 10,000 People.</h3>
 
 <h3>The first category used is Equal Counts, where each group is divided into an equal number of counties, in this case each group has either 5 or 6 counties.
-This category does a good job of dividing the state into different, mostly even groups, which allows for the counties to be ranked reletively easily based on their poverty rate.
-However, the major flaw with this category is that each of the groups' range varies largely, with the first two groups having a range of less than 200 people, with the last two groups having ranges of over 300.
-This means if a county is on the border of two groups, it could be represented in the same category as a county with 300 more people in poverty per 10,000.
+    This category does a good job of dividing the state into different, mostly even groups, which allows for the counties to be ranked reletively easily based on their poverty rate.
+    However, the major flaw with this category is that each of the groups' range varies largely, with the first two groups having a range of less than 200 people, with the last two groups having ranges of over 300.
+    This means if a county is on the border of two groups, it could be represented in the same category as a county with 300 more people in poverty per 10,000.
 </h3>
 <!-- Your map goes here -->
 <a href="NJ Poverty Equal Count.png">
@@ -21,16 +21,21 @@ This means if a county is on the border of two groups, it could be represented i
     </a>
 
 <h3>The second category used is Equal Interval, where each group is divided based on an equal range, which is the highest minus the lowest, divided by 5.  In this case, it is reletively similar to the equal count map.
-This category dividing based on numerical values provides breaks that allow for comparison based on where in the range the individual county is located.
-However, these breaks are heavily influenced by outliers.  While no outliers exist with this data, a single outlier can drastically shift the total range, leaving the sizes of the groups much larger than they would need to be.
-If there is an outlier that is so far above the other values, it can leave the majority in the lowest groups, with there being a large gap of empty groups between them an the outlier.    
+    This category dividing based on numerical values provides breaks that allow for comparison based on where in the range the individual county is located.
+    However, these breaks are heavily influenced by outliers.  While no outliers exist with this data, a single outlier can drastically shift the total range, leaving the sizes of the groups much larger than they would need to be.
+    If there is an outlier that is so far above the other values, it can leave the majority in the lowest groups, with there being a large gap of empty groups between them an the outlier.    
 </h3>
 <!-- Your map goes here -->
 <a href="NJ Poverty Equal Interval.png">
     <img src="NJ Poverty Equal Interval.png" alt="your map" width='500px'>
     </a>
 
-<h3>Natural/Pretty Break</h3>
+<h3>The final category used is a combination of Natural Breaks and Pretty Breaks.  Natural breaks occur at points that make sense, such as between where there is a large gap.  Pretty breaks occur to make the values at which the breaks occur look good, such as having breaks at every hundred.
+    This is a combination of the two as the location of the Natural Breaks were reletively closed to where the Pretty Breaks would occur.
+    Both are good for making a data set easier to understand, as the natural breaks account well for groupings of values while pretty breaks make the data easier to understand.
+    Natural breaks, however can be skewed by outliers.  An outlier may end up creating its own group, however, this is much less influential on natural breaks than equal interval as the new group doesn't affect the others.
+    Pretty breaks fall into a similar problem as equal count and equal interval, as it can lead to a value at the low end of the group being shown as equal to one at the high end.  This can be easily mitigated in pretty breaks, however, as the smaller the range of the break, the smaller the difference between the high and low end of the group.
+</h3>
 <!-- Your map goes here -->
 <a href="NJ Poverty Natural Breaks.png">
         <img src="NJ Poverty Natural Breaks.png" alt="your map" width='500px'>
