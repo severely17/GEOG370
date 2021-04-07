@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoprocessing Analysis</title>
+</head>
+<body>
+<h1>Homework 10: Geoprocessing Analysis </h1>
+<h2>Colin Anderson</h2>
+<h3>The question that I asked was about how much of California was within 25 miles of a National Park.
+    This data can be used when combined with census data to determine the number of people within a certain distance to a National Park, or combined with a road map to show how close major roadways are to the parks.
+    To start, I took the shapefile for National Parks and made an intersect with the California shapefile, which should have left all the parks in California selected.
+    However, Joshua Tree National Park was excluded from this intersect, despite being entirely within California's boundaries.
+    To try to fix this, I first downloaded a different California shapefile, but I ran into the same problem.
+    I instead selected only Joshua Tree National Park, made it its own layer, then merged it with the previously made intersect.
+    I then created a buffer of 25 miles around the parks to show how much of California was within that range.
+    Then, as some area was outside of California's boundaries, I made a second intersect, leaving only the area within 25 miles of a National Park that was within California.
+    For the creation of the map, I left California's boundaries visible as it provides a point of reference for what would have appeared to be disconnected blobs.
+    I also left the park locations visible too, as I intentionally cut off some of the buffer area around them, and without having them, the buffer zone would appear inaccurate.
+
+</h3>
+<!-- Your map goes here -->
+<a href="25 miles from Parks v2.png">
+    <img src="25 miles from Parks v2.png" alt="your map" width='500px'>
+    </a>
+
+<!-- Link to your shapefile in Github and you CSV -->
+<h2>Data used for this project</h2>
+    <a href="https://gis.data.ca.gov/datasets/8713ced9b78a4abb97dc130a691a8695_0?geometry=-146.754%2C31.049%2C-91.251%2C43.258">
+    California Counties from the California State Geoportal</a>
+    <p></p>
+    <a href="https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True"> National Park Data from the National Park Service</href>
+    <p></p>
+    <a href="Collection of links to Shapefiles.html">Page that contains links to all the shapefiles used.</a>
+    <p></p>
+
+</body>
+</html>
